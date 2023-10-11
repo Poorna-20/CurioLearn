@@ -245,27 +245,19 @@ footer {
   align-items: center;
 }
 
-.footer-social ul {
-  list-style: none;
-  padding: 0;
+.footer-social .social{
   display: flex;
+  align-items: center;
 }
 
-.footer-social ul li {
-  margin-right: 10px;
-}
-
-.footer-social ul li:last-child {
-  margin-right: 0;
-}
-
-.footer-social ul li a {
+.footer-social a {
   text-decoration: none;
   color: #fff;
   font-size: 24px;
+  margin-right: 20px;
 }
 
-.footer-social ul li a ion-icon {
+.footer-social a ion-icon {
   color: #fff;
 }
 
