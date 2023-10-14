@@ -12,73 +12,46 @@ signInButton.addEventListener('click', () => {
 
 
 
-// signup_login.js
-const auth = firebase.auth();
-const db = firebase.firestore();
-
-// Function to sign up a user with email and password
-function signUpWithEmailAndPassword(name, email, password) {
-  auth.createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // User signed up successfully
-      const user = userCredential.user;
-      // Store additional user data in Firestore
-      return db.collection("users").doc(user.uid).set({
-        name: name,
-        email: email
-      });
-    })
-    .catch((error) => {
-      // Handle errors here
-      console.error(error.message);
-    });
-}
-
-// Function to sign in a user with email and password
-function signInWithEmailAndPassword(email, password) {
-  auth.signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // User signed in successfully
-      const user = userCredential.user;
-      // You can redirect the user to another page here
-      window.location.href='public/index.html'
-    })
-    .catch((error) => {
-      // Handle errors here
-      console.error(error.message);
-    });
-}
-
-// Function to sign in with Google
-function signInWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider)
-    .then((userCredential) => {
-      // User signed in with Google successfully
-      const user = userCredential.user;
-      // You can redirect the user to another page here
-      window.location.href='public/index.html'
-    })
-    .catch((error) => {
-      // Handle errors here
-      console.error(error.message);
-    });
-}
-
-// Event listeners for your sign-up and sign-in buttons (assuming you have these in your HTML)
-document.getElementById("signUp").addEventListener("click", () => {
-  const name = document.querySelector("#container .sign-up-container input[type='text']").value;
-  const email = document.querySelector("#container .sign-up-container input[type='email']").value;
-  const password = document.querySelector("#container .sign-up-container input[type='password']").value;
-  signUpWithEmailAndPassword(name, email, password);
-});
-
-document.getElementById("signIn").addEventListener("click", () => {
-  const email = document.querySelector("#container .sign-in-container input[type='email']").value;
-  const password = document.querySelector("#container .sign-in-container input[type='password']").value;
-  signInWithEmailAndPassword(email, password);
-});
-
-document.querySelector("#container .form-container .social-container .social:first-child").addEventListener("click", () => {
-  signInWithGoogle();
-});
+document.querySelector("#signup-form").addEventListener("submit", async (e) => {
+	e.preventDefault();
+  
+	const name = document.querySelector("#signup-name").value;
+	const email = document.querySelector("#signup-email").value;
+	const password = document.querySelector("#signup-password").value;
+  
+	const response = await fetch("/signup", {
+	  method: "POST",
+	  headers: { "Content-Type": "application/json" },
+	  body: JSON.stringify({ name, email, password }),
+	});
+  
+	if (response.status === 200) {
+	  console.log("Signup successful");
+	  // You can redirect the user or show a success message
+	} else {
+	  const data = await response.json();
+	  console.error(data.message);
+	}
+  });
+  
+  document.querySelector("#login-form").addEventListener("submit", async (e) => {
+	e.preventDefault();
+  
+	const email = document.querySelector("#login-email").value;
+	const password = document.querySelector("#login-password").value;
+  
+	const response = await fetch("/login", {
+	  method: "POST",
+	  headers: { "Content-Type": "application/json" },
+	  body: JSON.stringify({ email, password }),
+	});
+  
+	if (response.status === 200) {
+	  console.log("Login successful");
+	  // You can redirect the user or show a success message
+	} else {
+	  const data = await response.json();
+	  console.error(data.message);
+	}
+  });
+  
