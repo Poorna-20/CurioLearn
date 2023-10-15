@@ -71,13 +71,13 @@ app.post('/login', async (req, res) => {
 
     if (user) {
       // Read the main.html file
-      fs.readFile('public/index.html', 'utf8', (err, data) => {
+      fs.readFile('public/main/main.html', 'utf8', (err, data) => {
         if (err) {
           console.error('Error reading main.html:', err);
           res.status(500).send('Error reading main.html');
         } else {
-          // Replace the {{user_name}} placeholder with the user's name
-          const modifiedHtml = data.replace('{{user_name}}', user.name);
+          // Replace all occurrences of {{user_name}} with the user's name
+          const modifiedHtml = data.replace(/{{user_name}}/g, user.name);
           res.send(modifiedHtml);
         }
       });
@@ -99,6 +99,16 @@ app.post('/login', async (req, res) => {
     console.error('Error in login:', error);
     res.status(500).json({ message: 'Error in login' });
   }
+});
+
+
+app.get('/logout', (req, res) => {
+  // req.session.destroy((err) => {
+  //   if (err) {
+  //     console.error('Error destroying session:', err);
+  //   }
+    res.redirect('SignUp_Login/signup_login.html'); // Redirect to the home page or login page
+  // });
 });
 
 // app.get('/user/:email', async (req, res) => {

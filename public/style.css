@@ -1,276 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+body{
+    font-family: 'Poppins', sans-serif;
 }
-
-header {
-  background-color: rgba(65, 105, 225,1);
-  backdrop-filter: blur(2px);
-  color: white;
-  height: 70px;
-  width: 100%;
-  text-align: center;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
+header{
+    background-color: rgba(65, 105, 225,1);
+    backdrop-filter: blur(2px);
+    color: white;
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
 }
-
-.nav_items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  margin-right: 60px;
+header .logo{
+    font-size: 30px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
 }
 
-.nav_item {
-  margin: 0 27px;
+.home{
+    height: 100vh;
+    /* width: 100%; */
+    background-image: url('bg.jpg');
+    background-position: right;
+    background-size: 700px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.nav_item a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
+.home .container{
+    margin-left: 30px;
 }
 
-/* .slbtn{
-    padding: 8px 15px;
-    border :none ;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: rgb(85, 85, 253);
+.container h1{
+    font-size: 34px;
+}
+.home .container .home_content{
+    font-size: 20px;
+    text-align: left;
+    width: 45%;
+}
+.home button{
+    width: 200px;
+    padding: 10px 20px;
+    margin-top: 70px;
+    font-size: 21px;
+    background-color: rgba(65, 105, 225,1);
     color: #fff;
-    
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
-.slbtn:hover{
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-} */
-
-.user h3{
-  cursor: pointer;
-  user-select: none;
-}
-
-main {
-  position: relative;
-}
-
-.sidebar {
-  width: 250px;
-  height: 80vh;
-  background-color: aqua;
-  padding: 20px;
-  margin: 10px 10px 5px 0;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  left: -290px;
-  transition: 0.2s;
-}
-.side_show {
-  left: 0;
-  z-index: 20;
-}
-.sidebar .sidebar_head {
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.sidebar ul {
-  list-style-type: none;
-}
-.sidebar ul li {
-  font-size: 20px;
-}
-
-.main_content {
-  height: 50vh;
-  margin-top: 70px;
-  /* background-color: chocolate; */
-}
-.search_container {
-  height: 300px;
-  /* background-image: url(https://png.pngtree.com/background/20230517/original/pngtree-book-shelf-picture-image_2639167.jpg); */
-  background-image: url(https://americanbookco.com/wp-content/uploads/2021/02/stacked-books.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 0;
-}
-.search_container::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: 300px;
-  width: 100%;
-  z-index: 5;
-}
-.search {
-  z-index: 10;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.search .search_content {
-  width: 100%;
-  font-size: 23px;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-
-.inputbox {
-  position: relative;
-  width: 100%;
-}
-.inputbox #searchInput {
-  width: 100%;
-  padding: 16px 20px;
-  border-radius: 30px;
-  font-size: 20px;
-  outline: none;
-  border: none;
-}
-.inputbox #searchButton {
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  transform: translateY(-50%);
-  padding: 10px 20px;
-  background-color: #001aff;
-  color: #fff;
-  font-size: 18px;
-  outline: none;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-
-
-
-
-
-#wikipediaSection,
-#youtubeSection{
-  margin: auto;
-  padding: 30px;
-  margin: 20px 25px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-#wikipediaSection h1,
-#youtubeSection h2{
-  margin-bottom: 20px;
-  font-size: 28px;
-
-}
-
-#youtubeResults {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
-  padding: 30px 100px;
-}
-
-.youtube-video,
-.unsplash-image {
-  max-width: 500px;
-  height: auto;
-  border-radius: 7px;
-  overflow: hidden;
-}
-
-
-.youtube-video {
-  width: 1200px;
-  height: 0;
-  padding-bottom: 30%; /*16:9 aspect ratio for videos*/
-  position: relative;
-  overflow: hidden;
-}
-
-.youtube-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-social {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-social .social{
-  display: flex;
-  align-items: center;
-}
-
-.footer-social a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 24px;
-  margin-right: 20px;
-}
-
-.footer-social a ion-icon {
-  color: #fff;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 10px 0;
-  font-size: 12px;
-}
-

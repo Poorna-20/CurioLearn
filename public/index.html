@@ -5,76 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CurioLearn</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-          <!-- <img src="./logo.png" alt="Logo"> -->
-          <h1>CurioLearn</h1>
+            CurioLearn
         </div>
-        <nav>
-          <ul class="nav_items">
-            <li class="nav_item"><a href="index.html">Home</a></li>
-            <li class="nav_item"><a href="#">Services</a></li>
-            <li class="nav_item"><a href="about.html">About</a></li>
-            <li class="nav_item"><a href="#">Contact</a></li>
-            <!-- <li class="nav_item"><button class="slbtn">SignUp/Login</button></li> -->
-            <li class="nav_item user"><h3>Hi, {{user_name}}!</h3></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <nav class="sidebar">
-          <h3 class="sidebar_head">Favorites</h3>
-          <ul>
-            <li>list</li>
-          </ul>
-        </nav>
-        <section class="main_content">
-          <div class="search_container">
-            <form class="search">
-              <div class="search_content">
-                <p>"Unlock the world of knowledge with our encyclopedia, plus dive into related videos and images, all conveniently accessible on our website."</p>
-              </div>
-              <div class="inputbox">
-                <input type="text" id="searchInput" placeholder="Enter Something To Know About it.......">
-                <button id="searchButton" type="submit" onclick="search()">Search</button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </main>
-
-
-    <section id="wikipediaSection">
-        <ul id="wikipediaResults"></ul>
+    </header>
+    <section class="home">
+        <div class="container">
+            <h1>Welcome to CurioLearn,</h1>
+            <p class="home_content">
+                your gateway to knowledge and exploration. Discover, learn, and connect with a vibrant community of curious minds. Join us on a lifelong journey of learning and discovery today!
+            </p>
+            <button id="slbtn">SignUp / Login</button>
+        </div>
+        
     </section>
-
-    <section id="youtubeSection">
-        <h2>Related Videos</h2>
-        <div id="youtubeResults"></div>
-    </section>
-
-
-    <footer>
-      <div class="footer-content">
-          <div class="footer-social">
-              <div class="social">
-                  <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-              </div>
-              <div class="footer-bottom">
-                &copy; 2023 CurioLearn. All rights reserved.
-              </div>
-          </div>
-      </div>
-      
-  </footer>
-  
-    
     <script src="script.js"></script>
 </body>
 </html>

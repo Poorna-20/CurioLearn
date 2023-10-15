@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(65, 105, 225,1);
+  backdrop-filter: blur(2px);
+  color: white;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
+}
+
+.nav_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 60px;
+}
+
+.nav_item {
+  margin: 0 27px;
+}
+
+.nav_item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.user{
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user ion-icon{
+  font-size: 28px;
+}
+
+.user p{
+  user-select: none;
+  font-size: 20px;
+}
+
+
+main {
+  position: relative;
+}
+
+.profile_container{
+  position: absolute;
+  right: 10px;
+  top: -500px;
+  width: 300px;
+  height: auto;
+  z-index: 70;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
+  transition: top .4s;
+}
+
+.user_show{
+  top: 10px;
+}
+
+.profile_container .user_info{
+  text-align: center;
+}
+
+.profile_container .user_info p{
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+.profile_container .user_info img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile_container .user_info button{
+  padding: 8px 30px;
+  color: #fff;
+  background-color: #001aff;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 15px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.profile_container .user_options{
+  margin-top: 20px;
+}
+
+.profile_container .user_options ul{
+  list-style-type: none;
+  
+  
+}
+
+.profile_container .user_options ul li{
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.profile_container .user_options ul li:hover{
+  background-color: #e4e4e4;
+}
+
+.sidebar {
+  width: 250px;
+  height: 80vh;
+  background-color: aqua;
+  padding: 20px;
+  margin: 10px 10px 5px 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: -290px;
+  transition: 0.2s;
+}
+.side_show {
+  left: 0;
+  z-index: 20;
+}
+.sidebar .sidebar_head {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.sidebar ul {
+  list-style-type: none;
+}
+.sidebar ul li {
+  font-size: 20px;
+}
+
+.main_content {
+  height: 50vh;
+  margin-top: 70px;
+  /* background-color: chocolate; */
+}
+.search_container {
+  height: 300px;
+  /* background-image: url(https://png.pngtree.com/background/20230517/original/pngtree-book-shelf-picture-image_2639167.jpg); */
+  background-image: url(https://americanbookco.com/wp-content/uploads/2021/02/stacked-books.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+.search_container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 300px;
+  width: 100%;
+  z-index: 5;
+}
+.search {
+  z-index: 10;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search .search_content {
+  width: 100%;
+  font-size: 23px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.inputbox {
+  position: relative;
+  width: 100%;
+}
+.inputbox #searchInput {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 30px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+.inputbox #searchButton {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #001aff;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+
+
+
+
+.entry-image{
+  width : 350px;
+  height :380px;
+  object-fit: contain;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#wikipediaSection,
+#youtubeSection{
+  margin: auto;
+  padding: 30px;
+  margin: 20px 25px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#wikipediaSection h1,
+#youtubeSection h2{
+  margin-bottom: 20px;
+  font-size: 28px;
+
+}
+
+#youtubeResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  padding: 30px 100px;
+}
+
+.youtube-video,
+.unsplash-image {
+  max-width: 500px;
+  height: auto;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+
+.youtube-video {
+  width: 1200px;
+  height: 0;
+  padding-bottom: 30%; /*16:9 aspect ratio for videos*/
+  position: relative;
+  overflow: hidden;
+}
+
+.youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-social {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social .social{
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.footer-social a ion-icon {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
