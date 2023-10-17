@@ -31,33 +31,26 @@ header .logo {
   font-family: "Exo 2", sans-serif;
 }
 
-/* .menu {
-  position: absolute;
-  right: 90px;
-  top: 23px;
-  z-index: 81;
-  cursor: pointer;
+ul{
+  list-style-type: none;
 }
-.menu ion-icon {
-  font-size: 28px;
-  color: #fff;
-} */
 
-.menu .checkbtn{
-  color: #fff;
+.user_icon{
+  display: flex;
+  align-items: center;
   position: absolute;
-  right: 90px;
-  top: 23px;
-  z-index: 81;
-  cursor: pointer;
-  display: none;
+  top: 20px;
+  right: 75px;
 }
-.menu .checkbtn ion-icon{
+.user_icon ion-icon{
   font-size: 30px;
-}
-.menu #check{
   display: none;
+  cursor: pointer;
 }
+.user_icon ion-icon:nth-child(2){
+  font-size: 20px;
+}
+
 .nav_items {
   display: flex;
   justify-content: space-between;
@@ -95,8 +88,15 @@ main {
   position: relative;
 }
 
+.menu{
+  display: none;
+}
+
+.menu_options{
+  display: none;
+}
 .profile_container {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: -100%;
   width: 300px;
@@ -110,7 +110,7 @@ main {
 }
 
 .user_show {
-  top: 3%;
+  top: 11%;
 }
 
 .profile_container .user_info {
@@ -269,7 +269,7 @@ main {
 #wikipediaSection,
 #youtubeSection {
   padding: 30px;
-  margin: 20px 25px;
+  margin: 0px 25px;
   background-color: #fff;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -362,35 +362,60 @@ footer {
 
 
 @media (max-width: 850px) {
-  .menu .checkbtn {
-    display: block;
+  header .logo {
+    margin-left: 25px;
   }
-  .nav_items {
-    width: 100%;
+
+  .nav_items{
+    display: none;
+  }
+  .menu{
+    display: block;
+    position: absolute;
+    top: 23px;
+    left: 15px;
+  }
+  .menu ion-icon{
+    font-size: 30px;
+  }
+  
+  .menu_options{
     position: fixed;
-    height: 80vh;
-    background-color: rgb(235, 183, 235);
-    left: -100%;
-    text-align: center;
-    transition: all 0.5s;
-    z-index: 101;
-  }
-  .nav_items .nav_item {
+    right: 10px;
+    top: -100%;
+    width: 377px;
+    height: auto;
+    z-index: 70;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);
+    transition: top 0.4s;
     display: block;
-    margin: 50px 0;
-    line-height: 30px;
   }
-  .nav_items .nav_item a {
-    font-size: 20px;
-    color: brown;
+  .menu_options_show{
+    top:14%
   }
-  .nav_items .nav_item a.active,
-  .nav_items .nav_item a:hover {
-    background: none;
-    color: darkgreen;
+
+  .menu_options .menu_items .menu_item{
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 7px;
+    cursor: pointer;
   }
-  #check:checked ~ ul {
-    left: 0;
+
+  .user_icon ion-icon{
+    display: block;
+  }
+  
+
+  .profile_container {
+    width: 377px;
+    height: auto;
+    box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);
+  }
+  .user_show{
+    top: 15%;
   }
 
   .main_content .search_container,.main_content .search_container::after {
@@ -424,7 +449,7 @@ footer {
     font-size: 14px;
   }
   .inputbox #searchButton {
-    right: 24px;
+    right: 25px;
     padding: 6px 15px;
     font-size: 14px;
   }
@@ -432,7 +457,7 @@ footer {
   #wikipediaSection,
   #youtubeSection {
   padding: 24px;
-  margin: 10px 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 

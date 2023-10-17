@@ -1,7 +1,19 @@
 const userInfo = document.getElementById('user');
 const userOptions = document.getElementById('profile_container');
 
+const userIcon = document.getElementById('user_icon');
+const menu = document.querySelector('.menu');
+const menuOptions = document.querySelector('.menu_options')
 userInfo.addEventListener('click', (event) => {
+    event.stopPropagation();
+    userOptions.classList.toggle('user_show');
+});
+
+menu.addEventListener('click', (event) => {
+    event.stopPropagation();
+    menuOptions.classList.toggle('menu_options_show');
+});
+userIcon.addEventListener('click', (event) => {
     event.stopPropagation();
     userOptions.classList.toggle('user_show');
 });
