@@ -56,7 +56,7 @@ header .logo{
     width: 45%;
 }
 .home button{
-    width: 200px;
+    width: 300px;
     padding: 10px 20px;
     margin-top: 70px;
     font-size: 21px;
@@ -66,4 +66,35 @@ header .logo{
     border: none;
     outline: none;
     cursor: pointer;
+    transform: scale(1);
+}
+
+.home button:hover{
+    transform: scale(1.02);
+}
+
+
+
+@media (max-width:767px){
+    .home{
+        background-size: 400px;
+        background-position: top;
+        align-items:end;
+    }
+    .home .container{
+        margin-left: 20px;
+    }
+    .container h1{
+        font-size: 26px;
+    }
+    .home .container .home_content{
+        font-size: 17px;
+        text-align: left;
+        width: 97%;
+    }  
+    .home button{
+        width: 80%;
+        margin: 20px 18px;
+        font-size: 17px;
+    } 
 }

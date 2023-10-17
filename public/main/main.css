@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: rgba(65, 105, 225,1);
+  background-color: rgba(65, 105, 225, 1);
   backdrop-filter: blur(2px);
   color: white;
   height: 70px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   padding: 0 30px;
   display: flex;
@@ -27,8 +27,36 @@ header {
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
 }
 
-header .logo{
-  font-family: 'Exo 2', sans-serif;
+header .logo {
+  font-family: "Exo 2", sans-serif;
+}
+
+/* .menu {
+  position: absolute;
+  right: 90px;
+  top: 23px;
+  z-index: 81;
+  cursor: pointer;
+}
+.menu ion-icon {
+  font-size: 28px;
+  color: #fff;
+} */
+
+.menu .checkbtn{
+  color: #fff;
+  position: absolute;
+  right: 90px;
+  top: 23px;
+  z-index: 81;
+  cursor: pointer;
+  display: none;
+}
+.menu .checkbtn ion-icon{
+  font-size: 30px;
+}
+.menu #check{
+  display: none;
 }
 .nav_items {
   display: flex;
@@ -48,30 +76,29 @@ header .logo{
   font-size: 18px;
 }
 
-.user{
+.user {
   display: flex;
   gap: 10px;
   cursor: pointer;
 }
 
-.user ion-icon{
+.user ion-icon {
   font-size: 28px;
 }
 
-.user p{
+.user p {
   user-select: none;
   font-size: 20px;
 }
-
 
 main {
   position: relative;
 }
 
-.profile_container{
+.profile_container {
   position: absolute;
   right: 10px;
-  top: -500px;
+  top: -100%;
   width: 300px;
   height: auto;
   z-index: 70;
@@ -79,29 +106,29 @@ main {
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
-  transition: top .4s;
+  transition: top 0.4s;
 }
 
-.user_show{
-  top: 10px;
+.user_show {
+  top: 3%;
 }
 
-.profile_container .user_info{
+.profile_container .user_info {
   text-align: center;
 }
 
-.profile_container .user_info p{
+.profile_container .user_info p {
   font-size: 20px;
   letter-spacing: 4px;
 }
-.profile_container .user_info img{
+.profile_container .user_info img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.profile_container .user_info button{
+.profile_container .user_info button {
   padding: 8px 30px;
   color: #fff;
   background-color: #001aff;
@@ -113,28 +140,26 @@ main {
   cursor: pointer;
 }
 
-.profile_container .user_options{
+.profile_container .user_options {
   margin-top: 20px;
 }
 
-.profile_container .user_options ul{
+.profile_container .user_options ul {
   list-style-type: none;
-  
-  
 }
 
-.profile_container .user_options ul li{
+.profile_container .user_options ul li {
   font-size: 20px;
   padding: 10px 15px;
   border-radius: 7px;
   cursor: pointer;
 }
 
-.profile_container .user_options ul li:hover{
+.profile_container .user_options ul li:hover {
   background-color: #e4e4e4;
 }
 
-.sidebar {
+/* .sidebar {
   width: 250px;
   height: 80vh;
   background-color: aqua;
@@ -161,16 +186,15 @@ main {
 }
 .sidebar ul li {
   font-size: 20px;
-}
+} */
 
 .main_content {
   height: 50vh;
   margin-top: 70px;
-  /* background-color: chocolate; */
 }
-.search_container {
+.main_content .search_container {
   height: 300px;
-  /* background-image: url(https://png.pngtree.com/background/20230517/original/pngtree-book-shelf-picture-image_2639167.jpg); */
+  width: 100%;
   background-image: url(https://americanbookco.com/wp-content/uploads/2021/02/stacked-books.jpeg);
   background-position: center;
   background-size: cover;
@@ -194,9 +218,7 @@ main {
 .search {
   z-index: 10;
   width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  transform: translateY(50%),translateX(10%);
 }
 
 .search .search_content {
@@ -235,13 +257,9 @@ main {
   cursor: pointer;
 }
 
-
-
-
-
-.entry-image{
-  width : 350px;
-  height :380px;
+.entry-image {
+  width: 350px;
+  height: 380px;
   object-fit: contain;
   margin: 20px;
   padding: 20px;
@@ -249,8 +267,7 @@ main {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 #wikipediaSection,
-#youtubeSection{
-  margin: auto;
+#youtubeSection {
   padding: 30px;
   margin: 20px 25px;
   background-color: #fff;
@@ -259,13 +276,10 @@ main {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-
-#wikipediaSection h1,
-#youtubeSection h2{
+#wikipediaSection h2,
+#youtubeSection h2 {
   margin-bottom: 20px;
   font-size: 28px;
-
 }
 
 #youtubeResults {
@@ -276,14 +290,12 @@ main {
   padding: 30px 100px;
 }
 
-.youtube-video,
-.unsplash-image {
+.youtube-video{
   max-width: 500px;
   height: auto;
   border-radius: 7px;
   overflow: hidden;
 }
-
 
 .youtube-video {
   width: 1200px;
@@ -303,7 +315,6 @@ main {
 a {
   text-decoration: none;
 }
-
 
 footer {
   background-color: #333;
@@ -327,7 +338,7 @@ footer {
   align-items: center;
 }
 
-.footer-social .social{
+.footer-social .social {
   display: flex;
   align-items: center;
 }
@@ -348,4 +359,116 @@ footer {
   padding: 10px 0;
   font-size: 12px;
 }
+
+
+@media (max-width: 850px) {
+  .menu .checkbtn {
+    display: block;
+  }
+  .nav_items {
+    width: 100%;
+    position: fixed;
+    height: 80vh;
+    background-color: rgb(235, 183, 235);
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 101;
+  }
+  .nav_items .nav_item {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .nav_items .nav_item a {
+    font-size: 20px;
+    color: brown;
+  }
+  .nav_items .nav_item a.active,
+  .nav_items .nav_item a:hover {
+    background: none;
+    color: darkgreen;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  .main_content .search_container,.main_content .search_container::after {
+    height: 230px;
+  }
+  
+  .search_container .search {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search .search_content {
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 17px;
+  }
+  
+  .search .inputbox {
+    position: relative;
+    width: 80%;
+    text-align: center;
+  }
+  .inputbox #searchInput {
+    width: 80%;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  .inputbox #searchButton {
+    right: 24px;
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+
+  #wikipediaSection,
+  #youtubeSection {
+  padding: 24px;
+  margin: 10px 10px;
+}
+
+
+  #wikipediaSection h1,
+  #youtubeSection h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+#youtubeResults {
+  gap: 20px;
+  padding: 20px;
+}
+  .youtube-video {
+  width: 1500px;
+  height: 0;
+  padding-bottom: 80%; 
+  } 
+
+  .youtube-video iframe {
+    width: 100%;
+  }
+
+  .entry-image {
+    width: 250px;
+    height: 280px;
+    margin: 16px;
+    padding: 16px;
+  }
+  footer {
+    padding: 5px 8px;
+  }
+  .footer-social a {
+    font-size: 17px;
+    margin-right: 15px;
+  }
+}
+
+
 

@@ -230,3 +230,41 @@ input {
 	font-size: 20px;
 }
 
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 10px 0;
+    }
+
+    button {
+        font-size: 10px;
+        padding: 8px 25px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .form-container, .overlay-container {
+        padding: 0 20px;
+    }
+
+    .social-container {
+        margin: 10px 0;
+    }
+
+    .social-container a {
+        font-size: 16px;
+        height: 30px;
+        width: 100px;
+    }
+}

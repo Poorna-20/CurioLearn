@@ -9,15 +9,14 @@ const fs = require('fs');
 
 
 
-const url = 'mongodb+srv://nitish:nitish9966@cluster0.tsuqmmv.mongodb.net/'; // Replace with your MongoDB connection string
-const dbName = 'Registered_DB'; // Replace with your database name
+const url = 'mongodb+srv://nitish:nitish9966@cluster0.tsuqmmv.mongodb.net/'; 
+const dbName = 'INCOGNITODB'; 
 
 const client = new MongoClient(url, { useUnifiedTopology: true });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true })); // Replace 'your-secret-key' with a secure secret
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
@@ -69,6 +68,13 @@ app.post('/login', async (req, res) => {
     // Find the user by email
     const user = await collection.findOne({ email: email });
 
+    // Verify the password using bcrypt
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatch) {
+      return res.status(401).json({ message: 'Incorrect password' });
+    }
+
     if (user) {
       // Read the main.html file
       fs.readFile('public/main/main.html', 'utf8', (err, data) => {
@@ -76,7 +82,6 @@ app.post('/login', async (req, res) => {
           console.error('Error reading main.html:', err);
           res.status(500).send('Error reading main.html');
         } else {
-          // Replace all occurrences of {{user_name}} with the user's name
           const modifiedHtml = data.replace(/{{user_name}}/g, user.name);
           res.send(modifiedHtml);
         }
@@ -84,13 +89,6 @@ app.post('/login', async (req, res) => {
     } else {
       // Handle the case where the user's data is not found
       res.status(404).send('User not found');
-    }
-
-    // Verify the password using bcrypt
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (!passwordMatch) {
-      return res.status(401).json({ message: 'Incorrect password' });
     }
 
     // Login successful
@@ -103,42 +101,8 @@ app.post('/login', async (req, res) => {
 
 
 app.get('/logout', (req, res) => {
-  // req.session.destroy((err) => {
-  //   if (err) {
-  //     console.error('Error destroying session:', err);
-  //   }
-    res.redirect('SignUp_Login/signup_login.html'); // Redirect to the home page or login page
-  // });
+    res.redirect('SignUp_Login/signup_login.html'); // Redirect to the  login page
 });
-
-// app.get('/user/:email', async (req, res) => {
-//   try {
-//     const db = client.db(dbName);
-//     const collection = db.collection('users');
-
-//     const email = req.params.email;
-
-//     // Find the user by email
-//     const user = await collection.findOne({ email: email });
-
-//     if (!user) {
-//       return res.status(404).json({ message: 'User not found' });
-//     }
-
-//     // Return user data
-//     res.status(200).json(user);
-//   } catch (error) {
-//     console.error('Error in retrieving user data:', error);
-//     res.status(500).json({ message: 'Error in retrieving user data' });
-//   }
-// });
-
-// Redirect to the login page with a success message
-// app.get('/login', (req, res) => {
-//   res.redirect('/login?message=Signup%20successful.%20You%20can%20now%20login.');
-//   // res.redirect('/dashboard.html');
-
-// });
 
 
 
