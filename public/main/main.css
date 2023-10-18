@@ -189,7 +189,7 @@ main {
 } */
 
 .main_content {
-  height: 50vh;
+  height: 320px;
   margin-top: 70px;
 }
 .main_content .search_container {
@@ -274,6 +274,10 @@ main {
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#youtubeSection{
+  margin-bottom: 70px;
 }
 
 #wikipediaSection h2,
@@ -385,7 +389,7 @@ footer {
     top: -100%;
     width: 377px;
     height: auto;
-    z-index: 70;
+    z-index: 84;
     background-color: #fff;
     padding: 15px;
     border-radius: 7px;
@@ -394,7 +398,7 @@ footer {
     display: block;
   }
   .menu_options_show{
-    top:14%
+    top:12%
   }
 
   .menu_options .menu_items .menu_item{
@@ -412,13 +416,14 @@ footer {
   .profile_container {
     width: 377px;
     height: auto;
+    z-index: 84;
     box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);
   }
   .user_show{
-    top: 15%;
+    top: 12%;
   }
   .main_content{
-    height: 40vh;
+    height: 250px;
   }
   .main_content .search_container,.main_content .search_container::after {
     height: 230px;
@@ -458,9 +463,12 @@ footer {
 
   #wikipediaSection,
   #youtubeSection {
-  padding: 24px;
-  margin: 0px 10px 10px 10px;
-}
+    padding: 22px;
+    margin: 0px 10px 10px 10px;
+  }
+  #youtubeSection{
+    margin-bottom: 70px;
+  }
 
 
   #wikipediaSection h1,
