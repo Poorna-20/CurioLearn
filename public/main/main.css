@@ -417,7 +417,9 @@ footer {
   .user_show{
     top: 15%;
   }
-
+  .main_content{
+    height: 40vh;
+  }
   .main_content .search_container,.main_content .search_container::after {
     height: 230px;
   }
