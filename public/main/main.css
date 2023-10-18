@@ -86,6 +86,7 @@ ul{
 
 main {
   position: relative;
+  min-height: calc(100vh - 70px - 57.5px);
 }
 
 .menu{
@@ -370,6 +371,10 @@ footer {
     margin-left: 25px;
   }
 
+  main {
+    position: relative;
+    min-height: calc(100vh - 70px - 48px);
+  }
   .nav_items{
     display: none;
   }

@@ -1,107 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CurioLearn</title>
-    <link rel="stylesheet" href="main/main.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="main/main.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
     <header>
-        <div class="logo">
-          <h1>CurioLearn</h1>
-        </div>
-        
-        <div class="menu">
-            <ion-icon name="menu"></ion-icon>
-        </div>
-        <div class="user_icon" id="user_icon">
-          <ion-icon name="person-circle-outline"></ion-icon>
-          <ion-icon name="chevron-down-outline"></ion-icon>
-        </div>
-        <nav>
-          <ul class="nav_items">
-            <li class="nav_item"><a href="#">Home</a></li>
-            <li class="nav_item"><a href="#">Services</a></li>
-            <li class="nav_item"><a href="main/about.html">About</a></li>
-            <li class="nav_item"><a href="#">Contact</a></li>
-            <li class="nav_item user" id="user"><p>Hi, {{user_name}}</p><ion-icon name="person-circle-outline"></ion-icon></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <!-- <nav class="sidebar">
+      <div class="logo">
+        <h1>CurioLearn</h1>
+      </div>
+
+      <div class="menu">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+      <div class="user_icon" id="user_icon">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+      <nav>
+        <ul class="nav_items">
+          <li class="nav_item"><a href="#">Home</a></li>
+          <li class="nav_item"><a href="#">Services</a></li>
+          <li class="nav_item"><a href="main/about.html">About</a></li>
+          <li class="nav_item"><a href="#">Contact</a></li>
+          <li class="nav_item user" id="user">
+            <p>Hi, {{user_name}}</p>
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- <nav class="sidebar">
           <h3 class="sidebar_head">Favorites</h3>
           <ul>
             <li>list</li>
           </ul>
         </nav> -->
-        <div class="menu_options">
-          <ul class="menu_items">
-            <li class="menu_item"><a href="#">Home</a></li>
-            <li class="menu_item"><a href="#">Services</a></li>
-            <li class="menu_item"><a href="main/about.html">About</a></li>
-            <li class="menu_item"><a href="#">Contact</a></li>
+      <div class="menu_options">
+        <ul class="menu_items">
+          <li class="menu_item"><a href="#">Home</a></li>
+          <li class="menu_item"><a href="#">Services</a></li>
+          <li class="menu_item"><a href="main/about.html">About</a></li>
+          <li class="menu_item"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="profile_container" id="profile_container">
+        <div class="user_info">
+          <img id="dp" src="user.png" alt="Profile Picture" />
+          <p>{{user_name}}</p>
+          <button onclick="">Edit Profile</button>
+        </div>
+        <div class="user_options">
+          <ul>
+            <!-- <li>Favorites</li> -->
+            <li id="logout-button">Logout</li>
           </ul>
         </div>
-        <div class="profile_container" id="profile_container">
-          <div class="user_info">
-            <img id="dp" src="user.png" alt="Profile Picture">
-            <p>{{user_name}}</p>
-            <button onclick="">Edit Profile</button>
-          </div>
-          <div class="user_options">
-            <ul>
-              <!-- <li>Favorites</li> -->
-              <li id="logout-button">Logout</li>
-            </ul>
-          </div>
+      </div>
+      <section class="main_content">
+        <div class="search_container">
+          <form class="search">
+            <div class="search_content">
+              <p>
+                "Unlock the world of knowledge with our encyclopedia, plus dive
+                into related videos and images, all conveniently accessible on
+                our website."
+              </p>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter Something......."
+              />
+              <button id="searchButton" type="submit" onclick="search()">
+                Search
+              </button>
+            </div>
+          </form>
         </div>
-        <section class="main_content">
-          <div class="search_container">
-            <form class="search">
-              <div class="search_content">
-                <p>"Unlock the world of knowledge with our encyclopedia, plus dive into related videos and images, all conveniently accessible on our website."</p>
-              </div>
-              <div class="inputbox">
-                <input type="text" id="searchInput" placeholder="Enter Something.......">
-                <button id="searchButton" type="submit" onclick="search()">Search</button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </main>
+      </section>
 
-
-    <section id="wikipediaSection">
+      <section id="wikipediaSection">
         <ul id="wikipediaResults"></ul>
-    </section>
+      </section>
 
-    <section id="youtubeSection">
+      <section id="youtubeSection">
         <h2>Related Videos</h2>
         <div id="youtubeResults"></div>
-    </section>
-
+      </section>
+    </main>
 
     <footer>
       <div class="footer-content">
-          <div class="footer-social">
-              <div class="social">
-                  <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-              </div>
-              <div class="footer-bottom">
-                &copy; 2023 CurioLearn. All rights reserved.
-              </div>
+        <div class="footer-social">
+          <div class="social">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
           </div>
+          <div class="footer-bottom">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            CurioLearn. All rights reserved.
+          </div>
+        </div>
       </div>
-      
-  </footer>
-  
-    
-  <script src="main/main.js"></script>
-</body>
+    </footer>
+
+    <script src="main/main.js"></script>
+  </body>
 </html>
