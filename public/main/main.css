@@ -86,6 +86,7 @@ ul{
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin: 0 15px;
 }
 
 .user {
@@ -402,8 +403,11 @@ footer {
     position: relative;
     min-height: calc(100vh - 70px - 48px);
   }
-  .nav_items{
+  .nav_item{
     display: none;
+  }
+  .light_dark{
+    margin-right: 55px;
   }
   .menu{
     display: block;
@@ -417,7 +421,8 @@ footer {
   
   .menu_options{
     position: fixed;
-    right: 10px;
+    transform: translatex(-50%);
+    left: 50%;
     top: -100%;
     width: 377px;
     height: auto;
@@ -446,10 +451,13 @@ footer {
   
 
   .profile_container {
+    transform: translatex(-50%);
+    left: 50%;
     width: 377px;
     height: auto;
     z-index: 84;
     box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);
+    margin: 0 auto;
   }
   .user_show{
     top: 12%;
