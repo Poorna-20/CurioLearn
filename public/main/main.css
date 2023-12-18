@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 :root{
   --bacground : #fff;
@@ -256,15 +257,15 @@ main {
 .inputbox {
   position: relative;
   width: 100%;
+  border-radius: 30px;
 }
 .inputbox #searchInput {
   width: 100%;
   padding: 16px 20px;
-  border-radius: 30px;
   font-size: 20px;
   outline: none;
   border: none;
-  background-color: #525252;
+  background-color:#e4e4e4;
   color: #fff;
 }
 .inputbox #searchButton {
@@ -488,15 +489,17 @@ footer {
   .search .inputbox {
     position: relative;
     width: 80%;
-    text-align: center;
+    overflow: hidden;
+    
+    /* text-align: center; */
   }
   .inputbox #searchInput {
-    width: 80%;
+    width: 100%;
     padding: 12px 15px;
     font-size: 14px;
   }
   .inputbox #searchButton {
-    right: 25px;
+    right: 8px;
     padding: 6px 15px;
     font-size: 14px;
   }
