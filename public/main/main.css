@@ -3,16 +3,29 @@
   margin: 0;
   padding: 0;
 }
+:root{
+  --bacground : #fff;
+  --text-color : #333;
+  --image : multiply;
+}
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--bacground);
+  color: var(--text-color);
+  transition: all .3s ease-out;
+}
+body.dark_mode{
+  --bacground : #333;
+  --text-color : #fff;
+  --image : lighten;
 }
 
 header {
   background-color: rgba(65, 105, 225, 1);
   backdrop-filter: blur(2px);
-  color: white;
+  color: #fff;
   height: 70px;
   width: 100vw;
   text-align: center;
@@ -68,6 +81,12 @@ ul{
   color: #fff;
   font-size: 18px;
 }
+.light_dark{
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
 .user {
   display: flex;
@@ -103,7 +122,7 @@ main {
   width: 300px;
   height: auto;
   z-index: 70;
-  background-color: #fff;
+  background-color: var(--bacground);
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);
@@ -127,11 +146,12 @@ main {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  mix-blend-mode: var(--image);
 }
 
 .profile_container .user_info button {
   padding: 8px 30px;
-  color: #fff;
+  color: var(--text-color);
   background-color: #001aff;
   border: none;
   outline: none;
@@ -158,6 +178,7 @@ main {
 
 .profile_container .user_options ul li:hover {
   background-color: #e4e4e4;
+  color: var(--bacground);
 }
 
 /* .sidebar {
@@ -242,6 +263,8 @@ main {
   font-size: 20px;
   outline: none;
   border: none;
+  background-color: #525252;
+  color: #fff;
 }
 .inputbox #searchButton {
   position: absolute;
@@ -262,18 +285,21 @@ main {
   width: 350px;
   height: 380px;
   object-fit: contain;
+  /* mix-blend-mode: var(--image); */
+  /* filter: contrast(1); */
   margin: 20px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
 #wikipediaSection,
 #youtubeSection {
   padding: 30px;
   margin: 0px 25px;
-  background-color: #fff;
+  background-color: var(--bacground);
   margin-bottom: 20px;
   border-radius: 5px;
+  transition: all .3s ease-out;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -322,9 +348,10 @@ a {
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--bacground);
+  color: var(--text-color);
   padding: 10px 0;
+  transition: all .3s ease-out;
 }
 
 .footer-content {
@@ -350,13 +377,13 @@ footer {
 
 .footer-social a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-size: 24px;
   margin-right: 20px;
 }
 
 .footer-social a ion-icon {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .footer-bottom {
@@ -395,7 +422,7 @@ footer {
     width: 377px;
     height: auto;
     z-index: 84;
-    background-color: #fff;
+    background-color: var(--bacground);
     padding: 15px;
     border-radius: 7px;
     box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);

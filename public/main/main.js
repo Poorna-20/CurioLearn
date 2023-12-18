@@ -193,3 +193,18 @@ document.getElementById('searchButton').addEventListener('click', async function
     await displayWikipediaResults(searchQuery);
     await displayYouTubeResults(searchQuery);
 });
+
+
+const lightDark = document.querySelector('.light_dark');
+lightDark.addEventListener('click',()=>{
+    let body=document.body;
+    let ldIcon = document.querySelector('.ld');
+    body.classList.toggle("dark_mode");
+    if(body.classList.contains("dark_mode")){
+        ldIcon.name = 'sunny';
+    }
+    else{
+        ldIcon.name = 'moon';
+    }
+
+})
