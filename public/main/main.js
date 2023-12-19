@@ -22,6 +22,9 @@ document.addEventListener('click', (event) => {
     if (!userOptions.contains(event.target) && event.target !== userInfo) {
         userOptions.classList.remove('user_show');
     }
+    if (!menuOptions.contains(event.target) && event.target !== menu) {
+        menuOptions.classList.remove('menu_options_show');
+    }
 });
 
 document.getElementById('logout-button').addEventListener('click', () => {

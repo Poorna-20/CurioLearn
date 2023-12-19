@@ -8,6 +8,7 @@
   --bacground : #fff;
   --text-color : #333;
   --image : multiply;
+  --box-color :rgba(0, 0, 255, 0.6);
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -21,6 +22,7 @@ body.dark_mode{
   --bacground : #333;
   --text-color : #fff;
   --image : lighten;
+  --box-color :rgba(223, 223, 255, 0.5);
 }
 
 header {
@@ -54,7 +56,7 @@ ul{
   align-items: center;
   position: absolute;
   top: 20px;
-  right: 75px;
+  right: 25px;
 }
 .user_icon ion-icon{
   font-size: 30px;
@@ -87,7 +89,7 @@ ul{
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin: 0 15px;
+  margin: 0 35px;
 }
 
 .user {
@@ -249,7 +251,7 @@ main {
   width: 100%;
   font-size: 23px;
   text-align: center;
-  color: #fff;
+  color: #e4e4e4;
   margin-bottom: 30px;
   padding: 20px;
 }
@@ -258,20 +260,23 @@ main {
   position: relative;
   width: 100%;
   border-radius: 30px;
+  background-color:#d4d4d4;
+  color: #333;
 }
 .inputbox #searchInput {
   width: 100%;
-  padding: 16px 20px;
+  padding: 16px 120px 16px 20px;
   font-size: 20px;
   outline: none;
   border: none;
+  border-radius: 30px;
   background-color:#e4e4e4;
-  color: #fff;
+  color: #333;
 }
 .inputbox #searchButton {
   position: absolute;
   top: 50%;
-  right: -30px;
+  right: 10px;
   transform: translateY(-50%);
   padding: 10px 20px;
   background-color: #001aff;
@@ -408,18 +413,19 @@ footer {
     display: none;
   }
   .light_dark{
-    margin-right: 55px;
+    margin-right: 10px;
   }
   .menu{
     display: block;
     position: absolute;
+    cursor: pointer;
     top: 23px;
     left: 15px;
   }
   .menu ion-icon{
     font-size: 30px;
   }
-  
+    
   .menu_options{
     position: fixed;
     transform: translatex(-50%);
@@ -431,7 +437,7 @@ footer {
     background-color: var(--bacground);
     padding: 15px;
     border-radius: 7px;
-    box-shadow: 0 0 100px rgba(0, 0, 255, 0.6);
+    box-shadow: 0 0 100px var(--box-color);
     transition: top 0.4s;
     display: block;
   }
@@ -441,15 +447,38 @@ footer {
 
   .menu_options .menu_items .menu_item{
     font-size: 23px;
-    padding: 15px 20px;
+    padding: 12px 20px;
     border-radius: 7px;
     cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu_item a{
+    color: var(--text-color);
+  }
+  .menu_item:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 80%;
+    width: 5px;
+    background-color: #001aff;
+    border-radius: 10px;
   }
 
   .user_icon ion-icon{
     display: block;
   }
-  
+  .user ion-icon{
+    display: none;
+  }
+  .user p {
+    display: none;
+  }
 
   .profile_container {
     transform: translatex(-50%);
