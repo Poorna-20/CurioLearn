@@ -117,9 +117,8 @@ header .logo{
         height: calc(100vh-80px);
         background-size: 310px;
         background-position: top center;
-        margin-top: 20px;
         align-items:center;
-        margin-right: 0px;
+        margin:20px 0px 0px 0px;
     }
     .home .container{
         margin:300px 20px 30px 30px;
