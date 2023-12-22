@@ -4,9 +4,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --bacground : #fff;
+    --text-color : #333;
+    --box-color :rgba(0, 0, 255, 0.6);
+}
+
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: var(--bacground);
 }
+
+body.dark_mode{
+    --bacground : #333;
+    --text-color : #fff;
+    --box-color :rgba(223, 223, 255, 0.5);
+}
+
 header{
     background-color: rgba(65, 105, 225,1);
     backdrop-filter: blur(2px);
@@ -17,7 +32,7 @@ header{
     padding: 0 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     position: sticky;
     top: 0;
     left: 0;
@@ -31,12 +46,21 @@ header .logo{
     letter-spacing: 5px;
 }
 
+.light_dark{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 35px;
+}
+
 .home{
-    height: 80vh;
-    /* width: 100%; */
-    background-image: url('bg.jpg');
+    height: calc(100vh - 70px);
+    background-color: var(--bacground);
+    background-image: url('bg11.png');
     background-position: right;
-    background-size: 700px;
+    margin:0 100px ;
+    background-size: 500px;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -48,10 +72,12 @@ header .logo{
 }
 
 .container h1{
-    font-size: 34px;
+    font-size: 38px;
+    color: #4169e1;
 }
 .home .container .home_content{
     font-size: 20px;
+    color: var(--text-color);
     text-align: left;
     width: 45%;
 }
@@ -60,12 +86,13 @@ header .logo{
     padding: 10px 20px;
     margin-top: 70px;
     font-size: 21px;
-    background-color: rgba(65, 105, 225,1);
+    background-color: #4169e1;
     color: #fff;
     border-radius: 40px;
     border: none;
     outline: none;
     cursor: pointer;
+    transition: .3s all ease-in-out;
     transform: scale(1);
 }
 
@@ -76,14 +103,26 @@ header .logo{
 
 
 @media (max-width:767px){
+    header{
+        justify-content: space-between;
+        
+    }
+    header .logo{
+        font-size: 25px;
+    }
+    body{
+        overflow-y: hidden;
+    }
     .home{
-        background-size: 400px;
-        background-position: top;
-        margin-top: 30px;
-        align-items:end;
+        height: calc(100vh-80px);
+        background-size: 310px;
+        background-position: top center;
+        margin-top: 20px;
+        align-items:center;
+        margin-right: 0px;
     }
     .home .container{
-        margin:30px
+        margin:300px 20px 30px 30px;
     }
     .container h1{
         font-size: 26px;
@@ -97,6 +136,6 @@ header .logo{
         width: 85%;
         margin: 42px 25px;
         font-size: 20px;
-        box-shadow: 0 0 100px rgba(0, 102, 255, 0.7);
+        box-shadow: 0 0 90px rgba(0, 102, 255, 0.7);
     } 
 }
