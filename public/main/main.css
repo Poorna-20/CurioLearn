@@ -299,6 +299,19 @@ main {
   border-radius: 8px;
   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
+.entry-title{
+  /* font-size: 35px; */
+  margin-top: 10px;
+  color:blueviolet;
+}
+.sub-title{
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: -10px;
+}
+.entry-content{
+  margin-left: 17px;
+}
 #wikipediaSection,
 #youtubeSection {
   padding: 30px;

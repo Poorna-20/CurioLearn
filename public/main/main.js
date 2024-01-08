@@ -39,7 +39,7 @@ document.getElementById('logout-button').addEventListener('click', () => {
         });
 });
 
-const youtubeApiKey = 'AIzaSyDDE-in4LuSrD4b2NnKTdgm8u5GpuRfdJs';
+// const youtubeApiKey = 'AIzaSyDDE-in4LuSrD4b2NnKTdgm8u5GpuRfdJs';
 
 function clearResults() {
     const wikipediaResults = document.getElementById('wikipediaResults');
@@ -122,7 +122,8 @@ function createWikipediaEntry(title, content, imageUrls) {
 
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('entry-content');
-    contentDiv.innerHTML = content;
+    // contentDiv.innerHTML = content;
+    contentDiv.innerHTML = parseMediaWikiMarkup(content);
     entryDiv.appendChild(contentDiv);
 
     if (imageUrls && imageUrls.length > 0) {
@@ -141,6 +142,16 @@ function createWikipediaEntry(title, content, imageUrls) {
 
     const wikipediaResults = document.getElementById('wikipediaResults');
     wikipediaResults.appendChild(entryDiv);
+}
+
+function parseMediaWikiMarkup(markup) {
+    // Regular expression to identify headings in MediaWiki markup
+    const headingRegex = /(=+)([^=]+)\1/g;
+
+    return markup.replace(headingRegex, (match, equalSigns, headingText) => {
+        // const level = equalSigns.length - 1;
+        return `<p class='sub-title'>${headingText.trim()}</p>`;
+    });
 }
 
 async function displayWikipediaResults(searchQuery) {
