@@ -209,11 +209,22 @@ document.getElementById('searchButton').addEventListener('click', async function
 });
 
 
+const userThemePreference = sessionStorage.getItem('theme');
+
+// If the preference is set, apply the theme
+if (userThemePreference === 'dark') {
+  document.body.classList.add('dark_mode');
+}
+
 const lightDark = document.querySelector('.light_dark');
 lightDark.addEventListener('click',()=>{
     let body=document.body;
     let ldIcon = document.querySelector('.ld');
     body.classList.toggle("dark_mode");
+
+    const currentTheme = body.classList.contains('dark_mode') ? 'dark' : 'light';
+    sessionStorage.setItem('theme', currentTheme);
+
     if(body.classList.contains("dark_mode")){
         ldIcon.name = 'sunny';
     }
@@ -222,3 +233,4 @@ lightDark.addEventListener('click',()=>{
     }
 
 })
+
