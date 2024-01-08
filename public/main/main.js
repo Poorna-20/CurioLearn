@@ -39,7 +39,7 @@ document.getElementById('logout-button').addEventListener('click', () => {
         });
 });
 
-// const youtubeApiKey = 'AIzaSyDDE-in4LuSrD4b2NnKTdgm8u5GpuRfdJs';
+const youtubeApiKey = 'AIzaSyDDE-in4LuSrD4b2NnKTdgm8u5GpuRfdJs';
 
 function clearResults() {
     const wikipediaResults = document.getElementById('wikipediaResults');
